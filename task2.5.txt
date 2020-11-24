@@ -1,0 +1,82 @@
+/****************************************************************************************************
+																									*
+									Практическое задание №5 :										*
+								"Использование процедур и функций"									*
+																									*
+																									*
+																									*
+																									*
+																									*
+																									*
+	                                             Сopyright © Петенев М.А. ПИ-203, ККиК "KroksCo" 	*
+																									*
+***************************************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+//Fill Array 
+int fillarr ( int m[100], int p) // p - number of array elements
+	{
+		int i ;
+		for (i=0; i < p; i++)
+		{
+			cout << "Enter "<< i+1 <<" element of array : ";
+			cin >> m[i];
+		};
+		cout << "{ ";
+		for (i=0; i < p-1 ; i++)
+		{
+			cout << m[i]<<", ";
+		}
+		cout << m[p-1] << " }" << endl ; // сделал это чтобы при выводе масива на конце не стояла запятая
+	};
+
+//Comparison with a number "с"
+int  sravn (int s4em, int mAss[100], int p) // p - number of array elements 
+	{
+		int i;
+		int count = 0;
+		for (i = 0; i < p; i++) 
+		{
+			if ( mAss[i] > s4em )
+			{
+			 count++;
+			}	
+		};
+		cout << count << endl;
+	};
+	
+//Array out
+/* int out (int )
+	{
+		for ()
+	}
+*/
+
+int main ()
+{
+	int c, n, k, i, o;
+	int T [100]; 
+	int Y [100];
+	cout << "Enter the number of elements for T array : ";
+	cin >> n;
+	cout << "Same, but for Y array : ";
+	cin >> k;
+	
+	cout << "Enter 'c' - ";
+	cin >> c;
+	cout << "T[" << n << "], Y[" << k << "], c = " << c << " ." << endl;
+	cout << "Fill T array - ";
+	fillarr(T, n);
+	cout << "Nice T array, m8! Now..." << endl << " Fill Y array - " ;
+	fillarr(Y,k);
+	cout << "goooood... Now, number of T array elemets that > than c - ";
+	sravn (c,T,n);
+	cout << "and same but with Y array elemetns - ";
+	sravn (c,Y,k);
+	system("pause");
+	cout << "Well done!... i think...";
+	
+
+ }
